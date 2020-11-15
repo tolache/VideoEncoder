@@ -14,7 +14,7 @@ namespace VideoEncoder
             };
             Encoder encoder = new Encoder(videos);
             MailService mailService = new MailService();
-            encoder.OnVideoEncoded += mailService.OnVideoEncoded;
+            encoder.VideoEncoded += mailService.VideoEncoded;
             encoder.Encode();
         }
     }

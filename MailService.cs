@@ -4,7 +4,7 @@ namespace VideoEncoder
 {
     public class MailService
     {
-        public void OnVideoEncoded(Video video)
+        public void VideoEncoded(Video video)
         {
             Console.WriteLine($"Email sent \"{video.Title} - encoded\".");
         }

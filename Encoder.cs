@@ -16,7 +16,7 @@ namespace VideoEncoder
 
         public delegate void VideoEncodedEventHandler(Video video);
 
-        public event VideoEncodedEventHandler OnVideoEncoded;
+        public event VideoEncodedEventHandler VideoEncoded;
 
         public void Encode()
         {
@@ -25,7 +25,7 @@ namespace VideoEncoder
                 Console.Write($"Encoding video {i+1} of {_videos.Count}: {_videos[i]}...");
                 Thread.Sleep(3000);
                 Console.WriteLine(" Done.");
-                OnOnVideoEncoded(_videos[i]);
+                OnVideoEncoded(_videos[i]);
 
                 if (i == _videos.Count - 1)
                 {
@@ -34,9 +34,9 @@ namespace VideoEncoder
             }
         }
 
-        protected virtual void OnOnVideoEncoded(Video video)
+        protected virtual void OnVideoEncoded(Video video)
         {
-            OnVideoEncoded?.Invoke(video);
+            VideoEncoded?.Invoke(video);
         }
     }
 }
