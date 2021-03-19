@@ -1,2 +1,2 @@
 # VideoEncoder
-A dummy application for practicing using events and delegates
+A trivial application for practicing using events and delegates
